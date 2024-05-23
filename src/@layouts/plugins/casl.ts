@@ -51,9 +51,9 @@ export const canNavigate = (to: RouteLocationNormalized) => {
     const action = route.meta.action;
     const subject = route.meta.subject;
 
-    if (action && subject)
-      // @ts-ignore
-      return ability.can(route.meta.action!, route.meta.subject!);
+    // if (action && subject)
+    //   // @ts-ignore
+    //   return ability.can(route.meta.action!, route.meta.subject!);
 
     return true;
   });
