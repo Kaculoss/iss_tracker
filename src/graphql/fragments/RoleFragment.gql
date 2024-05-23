@@ -1,0 +1,11 @@
+fragment RoleFragment on RoleType {
+  id
+  name
+  description
+  permissions {
+    id
+    entitlement {
+      ...EntitlementFragment
+    }
+  }
+}

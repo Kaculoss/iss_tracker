@@ -1,0 +1,13 @@
+fragment UserFragment on UserType {
+  id
+  email
+  full_name
+  first_name
+  last_name
+  avatar
+  active
+  createdAt
+  role {
+    ...RoleFragment
+  }
+}

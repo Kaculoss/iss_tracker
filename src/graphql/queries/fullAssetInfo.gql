@@ -1,0 +1,5 @@
+query FullAssetInfo($code: String!) {
+  fullAssetInfo(code: $code) {
+    ...AssetFragment
+  }
+}

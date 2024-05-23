@@ -1,0 +1,21 @@
+mutation UpdateAsset(
+  $id: ID!
+  $name: String
+  $type: String
+  $price: Int
+  $location: String
+  $vendor: String
+  $description: String
+) {
+  updateAsset(
+    id: $id
+    name: $name
+    type: $type
+    price: $price
+    location: $location
+    vendor: $vendor
+    description: $description
+  ) {
+    ...AssetFragment
+  }
+}

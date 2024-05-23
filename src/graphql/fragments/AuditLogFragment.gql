@@ -1,0 +1,10 @@
+fragment AuditLogFragment on AuditLogType {
+  id
+  event
+  type
+  createdAt
+  user_role
+  user {
+    ...UserFragment
+  }
+}

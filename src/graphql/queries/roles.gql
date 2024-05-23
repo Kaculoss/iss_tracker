@@ -1,0 +1,5 @@
+query roles {
+  roles {
+    ...RoleFragment
+  }
+}

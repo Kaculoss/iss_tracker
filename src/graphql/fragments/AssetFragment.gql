@@ -1,0 +1,12 @@
+fragment AssetFragment on AssetType {
+  id
+  code
+  name
+  type
+  price
+  vendor
+  description
+  location
+  createdAt
+  updatedAt
+}

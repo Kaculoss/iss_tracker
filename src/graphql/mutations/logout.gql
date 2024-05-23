@@ -1,0 +1,3 @@
+mutation Logout($id: ID!) {
+  logout(id: $id)
+}

@@ -1,0 +1,8 @@
+fragment SomeAssetInfoFragment on SomeAssetInfoType {
+  id
+  code
+  name
+  type
+  description
+  location
+}

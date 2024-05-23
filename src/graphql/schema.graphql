@@ -1,0 +1,105 @@
+schema {
+  query: RootQuery
+  mutation: RootMutation
+}
+
+"""Exposes a URL that specifies the behavior of this scalar."""
+directive @specifiedBy(
+  """The URL that specifies the behavior of this scalar."""
+  url: String!
+) on SCALAR
+
+type AssetType {
+  id: ID!
+  code: String!
+  name: String!
+  type: String!
+  price: Int!
+  vendor: String
+  description: String
+  location: String
+  createdAt: ISODate
+  updatedAt: ISODate
+  deletedAt: ISODate
+}
+
+type AuditLogType {
+  id: ID!
+  event: String!
+  user: UserType!
+  type: String!
+  user_role: String!
+  createdAt: ISODate
+}
+
+type AuthUser {
+  access_token: String!
+  user: UserType!
+}
+
+type EntitlementType {
+  id: ID!
+  name: String!
+}
+
+scalar ISODate
+
+type PermissionType {
+  id: ID!
+  entitlement: EntitlementType!
+}
+
+type RoleType {
+  id: ID!
+  name: String!
+  description: String
+  permissions: [PermissionType]
+}
+
+type RootMutation {
+  assignRole(user_id: ID!, role_id: ID!): UserType
+  createAsset(name: String!, type: String!, price: Int!, location: String, vendor: String, description: String): AssetType
+  deleteAsset(id: ID!): Boolean
+  login(email: String!, password: String!): AuthUser
+  logout(id: ID!): Boolean
+  signup(first_name: String!, last_name: String!, email: String!, password: String!, confirm_password: String!): SignUpType
+  updateAsset(id: ID!, type: String, description: String, location: String, price: Int, vendor: String, name: String): AssetType
+}
+
+type RootQuery {
+  allAssets: [AssetType]
+  auditLogs: [AuditLogType]
+  entitlements: [EntitlementType]
+  fullAssetInfo(code: String!): AssetType
+  roles: [RoleType]
+  someAssetInfo(code: String!): SomeAssetInfoType
+  user(id: ID!): UserType
+  users: [UserType]
+}
+
+type SignUpType {
+  access_token: String!
+  user: UserType!
+}
+
+type SomeAssetInfoType {
+  id: ID!
+  code: String!
+  name: String!
+  type: String!
+  description: String
+  location: String
+}
+
+type UserType {
+  id: ID!
+  role: RoleType!
+  email: String!
+  full_name: String!
+  first_name: String!
+  last_name: String!
+  avatar: String
+  active: Boolean!
+  createdAt: ISODate
+}
+

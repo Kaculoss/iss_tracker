@@ -1,0 +1,4 @@
+fragment EntitlementFragment on EntitlementType {
+  id
+  name
+}
