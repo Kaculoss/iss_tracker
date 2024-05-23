@@ -1,0 +1,32 @@
+{
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/"
+    },
+    {
+      "src": "/login",
+      "dest": "/"
+    },
+    {
+      "src": "/home",
+      "dest": "/"
+    },
+    {
+      "src": "/allAssets",
+      "dest": "/"
+    },
+    {
+      "src": "/users",
+      "dest": "/"
+    },
+    {
+      "src": "/auditLog",
+      "dest": "/"
+    },
+    {
+      "src": "/asset/*",
+      "dest": "/"
+    }
+  ]
+}
