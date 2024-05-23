@@ -177,7 +177,10 @@ const resolveUserRoleVariant = (role: string) => {
           <div class="d-flex">
             <VTooltip
               v-if="
-                user.id !== item.raw.id || item.raw.role.name !== 'Super Admin'
+                !(
+                  user.id === item.raw.id ||
+                  item.raw.role.name === 'Super Admin'
+                )
               "
               location="top"
               transition="scale-transition"
