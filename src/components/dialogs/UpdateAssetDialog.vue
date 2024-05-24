@@ -81,7 +81,7 @@ onUpdateAssetError((error) => {
 onUpdateAssetDone((result) => {
   if (result.data?.updateAsset) {
     errorMsg.value = "";
-    emit("update:successMessage", "Asset Created Successfully");
+    emit("update:successMessage", "Asset Updated Successfully");
     emit("update:isDialogVisible", false);
     emit("submit");
   }

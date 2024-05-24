@@ -26,7 +26,7 @@ onDeleteAssetError((error) => {
 });
 
 onDeleteAssetDone(() => {
-  emit("update:successMessage", "Department Deleted");
+  emit("update:successMessage", "Asset Deleted");
   emit("update:DialogVisible", false);
   emit("submit");
 });
